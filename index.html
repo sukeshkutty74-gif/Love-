@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Small Question ❤️</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#ffccd5,#ffe5ec);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    text-align:center;
+}
+
+.box{
+    background:white;
+    width:90%;
+    max-width:500px;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+
+button{
+    padding:12px 20px;
+    margin:10px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    background:#ff4d6d;
+    color:white;
+    font-size:16px;
+}
+
+input,textarea,select{
+    width:90%;
+    padding:10px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    margin-top:10px;
+}
+
+.page{
+    display:none;
+}
+
+h2{
+    color:#d6336c;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box page" id="p1" style="display:block">
+<h2>❤️ Can I ask you something?</h2>
+
+<button onclick="showPage('p2')">Sure</button>
+<button onclick="showPage('p1a')">Later</button>
+</div>
+
+<div class="box page" id="p1a">
+<h2>No, it's important ❤️</h2>
+<p>You can only click OK 😌</p>
+<button onclick="showPage('p2')">OK</button>
+</div>
+
+<div class="box page" id="p2">
+<h2>❤️ Shall we go on a date? ❤️</h2>
+
+<button onclick="showPage('p3')">OK Sure</button>
+
+<button id="runaway">No Way</button>
+</div>
+
+<div class="box page" id="p3">
+<h2>Select a date ❤️</h2>
+
+<p>Only these dates are available</p>
+
+<select id="date">
+<option>23/11/2026</option>
+<option>24/11/2026</option>
+<option>25/11/2026</option>
+</select>
+
+<br><br>
+
+<button onclick="showPage('p4')">
+Next
+</button>
+</div>
+
+<div class="box page" id="p4">
+<h2>☕ Which cafe shall we go to?</h2>
+
+<input type="text" id="cafe">
+
+<br><br>
+
+<button onclick="showPage('p5')">
+Next
+</button>
+
+</div>
+
+<div class="box page" id="p5">
+<h2>💌 Is there anything to say?</h2>
+
+<textarea rows="5" id="message"></textarea>
+
+<br><br>
+
+<button onclick="showPage('p6')">
+Submit
+</button>
+
+</div>
+
+<div class="box page" id="p6">
+
+<h2>❤️ Thank You ❤️</h2>
+
+<p>
+You made it all the way here and that means a lot to me.
+
+Every smile, every conversation and every moment shared with you becomes a memory worth keeping.
+
+Life feels better when we talk openly, understand each other and create beautiful memories together.
+
+Whatever happens, let's always talk and sort things out together.
+
+Looking forward to our date and spending time with you ❤️
+</p>
+
+<h3>
+With Love,<br>
+Sukesh ❤️
+</h3>
+
+</div>
+
+<script>
+
+function showPage(id){
+
+document.querySelectorAll(".page").forEach(
+page=>page.style.display="none"
+);
+
+document.getElementById(id).style.display="block";
+
+}
+
+const btn=document.getElementById("runaway");
+
+btn.addEventListener("mouseover",moveButton);
+
+btn.addEventListener("click",moveButton);
+
+function moveButton(){
+
+const x=Math.random()*(window.innerWidth-150);
+
+const y=Math.random()*(window.innerHeight-100);
+
+btn.style.position="fixed";
+
+btn.style.left=x+"px";
+
+btn.style.top=y+"px";
+
+}
+
+</script>
+
+</body>
+</html>
